@@ -5,6 +5,9 @@ const weather  = document.querySelector('#weather');
 const temp  = document.querySelector('#temp');
 const feels  = document.querySelector('#feels');
 
+
+
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -14,7 +17,7 @@ form.addEventListener('submit', (e) => {
     feels.textContent='';
 
     const location = searchQuery.value;
-    fetch('http://localhost:3000/weather?address='+location).then((response) => {
+    fetch('/weather?address='+location).then((response) => {
     response.json().then((data) => {
         if (data.error) {
             console.log('Error:',data.error);

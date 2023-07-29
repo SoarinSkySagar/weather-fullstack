@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import cors from "cors";
 import { fileURLToPath } from "url";
 import hbs from "hbs";
 import { geocode } from "../utils/geocode.js";
@@ -14,7 +15,7 @@ const name = 'Sagar Rana';
 
 const app = express();
 
-
+app.use(cors());
 //setup hbs
 app.set('view engine', 'hbs');
 app.set('views', viewsPath)
